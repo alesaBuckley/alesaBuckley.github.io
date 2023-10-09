@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">Ipecac</span> (Alesa Buckley, 2022)</h3>
+
+	
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/friends.jpg" alt="Fern, Jodie, and Merida">
+<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/barf.jpg" alt="Merida, sick">
+<img class="filmStill" onCLick="onClick_DTRT_img03()" src="images/sick.jpg" alt="Jodie, sick">
+</div>
+	
+<p class="Filminfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod vel impedit nostrum corporis nihil totam recusandae, vero, officia velit non id nesciunt ea unde facere. Libero tenetur provident alias tempora at vero, ducimus aliquam labore magnam! Modi voluptas impedit odio cumque eum ea nesciunt voluptatum. Distinctio recusandae sequi, iusto! Veritatis?</p>
+
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+	
+</body>
+<script>
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+	
+var DTRT_text = document.getElementById("DTRT_text");
+	
+var DTRT00 = "Ipecac, named after the medicine to induce vomiting, features a group of college friends that learn that their school, as a social experiment, is giving out free tution to one person from each floor and is leaving it up to the students to decide who gets it. It seems like a lucky oppourtunity unitl somebody takes it too far."
+
+var DTRT01 = "The friends meet at a bowling alley after the news of the tuition. Fern, Jodie, and Merida (left to right) joke about the different brutal ways they could determine who should win to Elle (offscreen) who is not as lighthearted about the experiment. Aubrey (offscreen) attempts to distract the group from the news and ease Elle's mind by buying another bowling lane."
+
+var DTRT02 = "When the girls arrive home from bowling, it seems all spirits are high again. As they settle in and begin playing a party game together, it becomes apparent that something is wrong with Merida. In almost the blink of an eye, her smile immedietly fades and she rushes out of the room, sick."
+	
+var DTRT03 = "Stirred from the mysterious nature of Merida's condition, Everyone went to sleep early. As the girls were considering all the possibilities of what happened to their friend, they realize they can rule out mere coincidence. They find Jodie on the couch the next morning with the same symptoms Merida had the previous night. The girls realized this was no accident"
+
+DTRT_text.innerHTML = DTRT00;
+
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}	
+	
+function revealButton(){
+	if(img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+	
+function gotoMovie(){
+	window.open("https://www.netflix.com/browse", "_blank");
+}
+</script>
+</html>
