@@ -1,0 +1,26 @@
+@charset "UTF-8";
+#displayed_video {
+    width: 100vw;
+    height: 100vh;
+	object-fit: cover;
+    position: fixed;
+	top: 0;
+	left: 0;
+}
+.centered_text {
+    position: relative;
+    text-align: center;
+	justify-content: center;
+	margin-top: 20vh;
+}
+#truism {
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    font-style: normal;
+    margin-left: 28vw;
+    margin-right: 28vw;
+    background-color: #2F302A;
+    font-size: xx-large;
+	border-radius: 40px;
+	color: #F2F2F2;
+	cursor: default;
+}

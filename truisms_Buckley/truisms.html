@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/truisms.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div>
+  <video id="displayed_video" muted="muted" autoplay="autoplay" loop="loop" >
+    <source src="video/IMG_3420.mp4" type="video/mp4">
+  </video>
+</div>
+	
+<div class="centered_text">
+	<h1 id="truism" onmouseover="OnTruismText()" onmouseout="outTruismText()" onClick="changeVideo()"> DISORGANIZATION IS A KIND OF ANESTHESIA </h1>
+	</div>
+	
+</body>
+</html>
+
+<script>
+
+var channel = 1;
+var pausedAt = 0;
+	
+//  stuff for sound
+	
+var mySound = new Audio("sounds/waves.mp3")
+	
+// references to videos
+	
+	var dishes = "video/IMG_3420.mp4";
+	var room = "video/classmate_truism.mp4";
+	
+function OnTruismText(){
+	console.log("clicked truism text")
+	document.getElementById("displayed_video").style.filter = "grayscale(100%)";
+}
+function outTruismText(){
+	console.log("moving out of truism text")
+	document.getElementById("displayed_video").style.filter = "grayscale(0%)";
+}
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel == 0){
+		displayed_video.src = dishes;
+		displayed_video.currentTime = pausedAt
+		channel = 1;
+	}
+	else{
+		displayed_video.src = room;
+		displayed_video.currentTime = pausedAt
+		channel = 0;
+	}
+	
+	mySound.play();
+	
+}
+</script>
